@@ -51,6 +51,13 @@
       formControlName="userName"
     />
   </div>
+  <app-mensagem
+    *ngIf="
+      novoUsuarioForm.get('userName')?.errors?.['minusculo'] &&
+      novoUsuarioForm.get('userName')?.touched
+    "
+    mensagem="apenas caracteres minúsculos"
+  ></app-mensagem>
   <div class="form-group">
     <input
       type="password"
